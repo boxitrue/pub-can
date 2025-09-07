@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Top Canadian Software Companies Using Palantir (2025)</title>
+  <title>2025 Top 100 Canadian Defence Companies</title>
   <style>
     body {
       font-family: 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(to right, #f4f7fa, #e9eff5);
+      background: #f4f7fa;
       margin: 0;
       padding: 2rem;
       color: #333;
@@ -20,18 +20,12 @@
       color: #2c3e50;
     }
 
-    .search-box {
+    p.description {
       text-align: center;
-      margin-bottom: 1.5rem;
-    }
-
-    input[type="text"] {
-      padding: 0.5rem 1rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
       font-size: 1rem;
-      width: 80%;
-      max-width: 400px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+      color: #555;
     }
 
     .table-container {
@@ -73,31 +67,26 @@
       th, td {
         padding: 0.5rem;
       }
-
-      input[type="text"] {
-        width: 90%;
-      }
     }
   </style>
 </head>
 <body>
-  <h1>Top Canadian Software Companies Using Palantir (2025)</h1>
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Filter by keyword..." onkeyup="filterTable()" />
-  </div>
+  <h1>2025 Top 100 Canadian Defence Companies</h1>
+  <p class="description">
+    Discover the top Canadian Defence Companies ranked annually by CDR based on their economic impact, innovation, research & development initiatives, contributions to national security, and excellence in supporting Canada’s military.
+  </p>
 
   <div class="table-container">
-    <table id="companyTable">
+    <table>
       <thead>
         <tr>
-          <th>Rank</th>
+          <th>2025 Rank</th>
           <th>Company Name</th>
-          <th>Industry Focus</th>
-          <th>Palantir Usage</th>
+          <th>Previous Rank</th>
         </tr>
       </thead>
       <tbody>
-	  
+
 <tr><td>1</td><td>CAE</td><td>6</td></tr>
 <tr><td>2</td><td>General Dynamics Land Systems-Canada</td><td>3</td></tr>
 <tr><td>3</td><td>RTX</td><td>2</td></tr>
@@ -202,26 +191,5 @@
       </tbody>
     </table>
   </div>
-
-  <script>
-    function filterTable() {
-      const input = document.getElementById("searchInput");
-      const filter = input.value.toLowerCase();
-      const table = document.getElementById("companyTable");
-      const rows = table.getElementsByTagName("tr");
-
-      for (let i = 1; i < rows.length; i++) {
-        const cells = rows[i].getElementsByTagName("td");
-        let match = false;
-        for (let j = 0; j < cells.length; j++) {
-          if (cells[j].textContent.toLowerCase().includes(filter)) {
-            match = true;
-            break;
-          }
-        }
-        rows[i].style.display = match ? "" : "none";
-      }
-    }
-  </script>
 </body>
 </html>
