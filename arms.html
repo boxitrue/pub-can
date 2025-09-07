@@ -67,6 +67,12 @@
       background-color: #f0f4f8;
       color: #34495e;
       font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    th:hover {
+      background-color: #e2e8f0;
     }
 
     tr:hover {
@@ -102,9 +108,9 @@
     <table id="defenceTable">
       <thead>
         <tr>
-          <th>2025 Rank</th>
-          <th>Company Name</th>
-          <th>Previous Rank</th>
+          <th onclick="sortTable(0)">2025 Rank ▲▼</th>
+          <th onclick="sortTable(1)">Company Name ▲▼</th>
+          <th onclick="sortTable(2)">Previous Rank ▲▼</th>
         </tr>
       </thead>
       <tbody>
@@ -214,22 +220,41 @@
 
   <script>
     function filterTable() {
-      const input = document.getElementById("searchInput");
-      const filter = input.value.toLowerCase();
-      const table = document.getElementById("defenceTable");
-      const rows = table.getElementsByTagName("tr");
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const rows = document.querySelectorAll("#defenceTable tbody tr");
+      rows.forEach(row => {
+        row.style.display = row.textContent.toLowerCase().includes(input) ? "" : "none";
+      });
+    }
 
-      for (let i = 1; i < rows.length; i++) {
-        const cells = rows[i].getElementsByTagName("td");
-        let match = false;
-        for (let j = 0; j < cells.length; j++) {
-          if (cells[j].textContent.toLowerCase().includes(filter)) {
-            match = true;
-            break;
-          }
+    const sortDirections = [true, true, true]; // ascending by default
+
+    function sortTable(colIndex) {
+      const table = document.getElementById("defenceTable");
+      const tbody = table.tBodies[0];
+      const rows = Array.from(tbody.rows);
+
+      const isNumeric = !isNaN(rows[0].cells[colIndex].textContent.trim());
+
+      rows.sort((a, b) => {
+        let aText = a.cells[colIndex].textContent.trim();
+        let bText = b.cells[colIndex].textContent.trim();
+
+        if (isNumeric) {
+          aText = parseFloat(aText);
+          bText = parseFloat(bText);
+        } else {
+          aText = aText.toLowerCase();
+          bText = bText.toLowerCase();
         }
-        rows[i].style.display = match ? "" : "none";
-      }
+
+        return sortDirections[colIndex]
+          ? aText > bText ? 1 : -1
+          : aText < bText ? 1 : -1;
+      });
+
+      sortDirections[colIndex] = !sortDirections[colIndex];
+      rows.forEach(row => tbody.appendChild(row));
     }
   </script>
 </body>
