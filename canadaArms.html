@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canadian Military Exporters to Israel</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f8;
+      padding: 2rem;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    th {
+      background-color: #0078d4;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Canadian Manufacturers Exporting to Israel</h1>
+<input type="text" id="filterInput" placeholder="Type to filter companies...">
+
+<table id="companyTable">
+  <thead>
+    <tr>
+      <th>Company Name</th>
+      <th>City/Region</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>General Dynamics Ordnance and Tactical Systems</td><td>Repentigny, QC</td></tr>
+    <tr><td>CMC Electronics</td><td>Montreal, QC</td></tr>
+    <tr><td>CAE Inc</td><td>Saint Laurent, QC</td></tr>
+    <tr><td>Pratt & Whitney</td><td>Montreal, QC</td></tr>
+    <tr><td>Apollo</td><td>Montreal, QC</td></tr>
+    <tr><td>Rheinmetall Canada</td><td>Montreal, QC</td></tr>
+    <tr><td>Marinvent Corporation</td><td>Montreal, QC</td></tr>
+    <tr><td>Stelia Aerospace</td><td>Lunenburg, NS</td></tr>
+    <tr><td>Calian GNSS</td><td>Ottawa, ON</td></tr>
+    <tr><td>Anodyne Electronics Manufacturing Corporation (AEM)</td><td>Kelowna, BC</td></tr>
+    <tr><td>Inova Geophysical</td><td>Calgary, AB</td></tr>
+    <tr><td>Novatel</td><td>Calgary, AB</td></tr>
+    <tr><td>Dishon Limited</td><td>Toronto, ON</td></tr>
+    <tr><td>Communication & Power Industries</td><td>Toronto, ON</td></tr>
+    <tr><td>Pixus Technologies</td><td>Waterloo, ON</td></tr>
+    <tr><td>Noranco (a PCC Company)</td><td>Toronto, ON</td></tr>
+    <tr><td>AM Rubber & Foam Gaskets Inc.</td><td>Toronto, ON</td></tr>
+    <tr><td>Enercorp Instruments Ltd.</td><td>Toronto, ON</td></tr>
+    <tr><td>Nexeya Canada (Test Solutions)</td><td>Toronto, ON</td></tr>
+  </tbody>
+</table>
+
+<script>
+  const input = document.getElementById('filterInput');
+  input.addEventListener('keyup', function() {
+    const filter = input.value.toLowerCase();
+    const rows = document.querySelectorAll('#companyTable tbody tr');
+    rows.forEach(row => {
+      const text = row.textContent.toLowerCase();
+      row.style.display = text.includes(filter) ? '' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>
