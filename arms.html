@@ -28,6 +28,20 @@
       color: #555;
     }
 
+    .search-box {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    input[type="text"] {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      width: 80%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
     .table-container {
       max-width: 1000px;
       margin: 0 auto;
@@ -67,6 +81,10 @@
       th, td {
         padding: 0.5rem;
       }
+
+      input[type="text"] {
+        width: 90%;
+      }
     }
   </style>
 </head>
@@ -76,8 +94,12 @@
     Discover the top Canadian Defence Companies ranked annually by CDR based on their economic impact, innovation, research & development initiatives, contributions to national security, and excellence in supporting Canada’s military.
   </p>
 
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Filter by keyword..." onkeyup="filterTable()" />
+  </div>
+
   <div class="table-container">
-    <table>
+    <table id="defenceTable">
       <thead>
         <tr>
           <th>2025 Rank</th>
@@ -86,7 +108,6 @@
         </tr>
       </thead>
       <tbody>
-
 <tr><td>1</td><td>CAE</td><td>6</td></tr>
 <tr><td>2</td><td>General Dynamics Land Systems-Canada</td><td>3</td></tr>
 <tr><td>3</td><td>RTX</td><td>2</td></tr>
@@ -187,9 +208,29 @@
 <tr><td>98</td><td>Zighra</td><td>N/A</td></tr>
 <tr><td>99</td><td>CCX Technologies</td><td>N/A</td></tr>
 <tr><td>100</td><td>NyRad</td><td>N/A</td></tr>
-
       </tbody>
     </table>
   </div>
+
+  <script>
+    function filterTable() {
+      const input = document.getElementById("searchInput");
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById("defenceTable");
+      const rows = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName("td");
+        let match = false;
+        for (let j = 0; j < cells.length; j++) {
+          if (cells[j].textContent.toLowerCase().includes(filter)) {
+            match = true;
+            break;
+          }
+        }
+        rows[i].style.display = match ? "" : "none";
+      }
+    }
+  </script>
 </body>
 </html>
