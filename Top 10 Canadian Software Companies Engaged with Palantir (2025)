@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top Canadian Software Companies Using Palantir (2025)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(to right, #f4f7fa, #e9eff5);
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+
+    .table-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      overflow-x: auto;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f0f4f8;
+      color: #34495e;
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background-color: #f9fcff;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      th, td {
+        padding: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Top Canadian Software Companies Using Palantir (2025)</h1>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Company Name</th>
+          <th>Industry Focus</th>
+          <th>Palantir Usage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>CGI Inc.</td><td>IT Services & Consulting</td><td>Enterprise analytics</td></tr>
+        <tr><td>2</td><td>Mission.dev</td><td>Software Development</td><td>Backend intelligence</td></tr>
+        <tr><td>3</td><td>Atlantis IT Group</td><td>IT Services</td><td>Client solutions integration</td></tr>
+        <tr><td>4</td><td>Viva Tech Solutions</td><td>IT Services</td><td>Data operations</td></tr>
+        <tr><td>5</td><td>TechDoQuest</td><td>IT Consulting</td><td>Data platform development</td></tr>
+        <tr><td>6</td><td>The Rundown AI</td><td>AI & Internet Tech</td><td>Model training</td></tr>
+        <tr><td>7</td><td>Pomerleau</td><td>Construction Tech</td><td>Project analytics</td></tr>
+        <tr><td>8</td><td>CN (Canadian National)</td><td>Rail Transportation</td><td>Logistics optimization</td></tr>
+        <tr><td>9</td><td>City of Calgary</td><td>Government Administration</td><td>Civic data management</td></tr>
+        <tr><td>10</td><td>ClearScale Canada</td><td>Cloud & Data Engineering</td><td>Cloud analytics stack</td></tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
