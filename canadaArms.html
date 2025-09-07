@@ -32,10 +32,15 @@
       padding: 0.75rem;
       text-align: left;
       border-bottom: 1px solid #eee;
+      cursor: pointer;
     }
     th {
       background-color: #0078d4;
       color: white;
+      user-select: none;
+    }
+    th:hover {
+      background-color: #005fa3;
     }
     tr:hover {
       background-color: #f1f1f1;
@@ -50,8 +55,8 @@
 <table id="companyTable">
   <thead>
     <tr>
-      <th>Company Name</th>
-      <th>City/Region</th>
+      <th onclick="sortTable(0)">Company Name ▲▼</th>
+      <th onclick="sortTable(1)">City/Region ▲▼</th>
     </tr>
   </thead>
   <tbody>
@@ -78,15 +83,36 @@
 </table>
 
 <script>
-  const input = document.getElementById('filterInput');
-  input.addEventListener('keyup', function() {
-    const filter = input.value.toLowerCase();
+  // Filter functionality
+  document.getElementById('filterInput').addEventListener('keyup', function() {
+    const filter = this.value.toLowerCase();
     const rows = document.querySelectorAll('#companyTable tbody tr');
     rows.forEach(row => {
-      const text = row.textContent.toLowerCase();
-      row.style.display = text.includes(filter) ? '' : 'none';
+      row.style.display = row.textContent.toLowerCase().includes(filter) ? '' : 'none';
     });
   });
+
+  // Sort functionality
+  let sortDirection = [true, true]; // true = ascending, false = descending
+
+  function sortTable(columnIndex) {
+    const table = document.getElementById('companyTable');
+    const rows = Array.from(table.rows).slice(1); // exclude header
+    const tbody = table.tBodies[0];
+
+    const sortedRows = rows.sort((a, b) => {
+      const aText = a.cells[columnIndex].textContent.trim().toLowerCase();
+      const bText = b.cells[columnIndex].textContent.trim().toLowerCase();
+      return sortDirection[columnIndex]
+        ? aText.localeCompare(bText)
+        : bText.localeCompare(aText);
+    });
+
+    sortDirection[columnIndex] = !sortDirection[columnIndex]; // toggle direction
+
+    // Re-append sorted rows
+    sortedRows.forEach(row => tbody.appendChild(row));
+  }
 </script>
 
 </body>
