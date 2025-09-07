@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canadian Companies in GPS & Satellite Sector</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f4f6f8;
+      margin: 2em;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.6em;
+      margin-bottom: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 0.75em;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    th {
+      background-color: #34495e;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      th {
+        position: sticky;
+        top: 0;
+        background-color: #2c3e50;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Canadian Companies in GPS & Satellite Sector</h1>
+<input type="text" id="filterInput" placeholder="Type to filter companies...">
+
+<table id="companyTable">
+  <thead>
+    <tr>
+      <th>Company Name</th>
+      <th>Specialty</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>MDA</td><td>Satellite systems, robotics, geointelligence</td><td>Brampton, ON</td></tr>
+    <tr><td>Telesat</td><td>Satellite operator, LEO internet (Lightspeed)</td><td>Ottawa, ON</td></tr>
+    <tr><td>GHGSat</td><td>Greenhouse gas monitoring satellites</td><td>Montreal, QC</td></tr>
+    <tr><td>ExactEarth</td><td>Maritime tracking via satellite AIS</td><td>Cambridge, ON</td></tr>
+    <tr><td>Applanix</td><td>GNSS + inertial navigation systems</td><td>Richmond Hill, ON</td></tr>
+    <tr><td>Profound Positioning</td><td>GNSS & sensor fusion (RTK, PPP)</td><td>Calgary, AB</td></tr>
+    <tr><td>Xona (Canada)</td><td>LEO GNSS (Pulsar) navigation system</td><td>Montreal, QC</td></tr>
+    <tr><td>Canadensys</td><td>Micro/nano satellites, lunar systems</td><td>Toronto, ON</td></tr>
+    <tr><td>NordSpace</td><td>Small satellites, launch vehicles</td><td>ON & NL</td></tr>
+    <tr><td>Ciel Satellite Group</td><td>Commercial satellite operator</td><td>Ottawa, ON</td></tr>
+    <tr><td>Reaction Dynamics</td><td>Rocket propulsion, launch services</td><td>Montreal, QC</td></tr>
+    <tr><td>Obruta Space Solutions</td><td>Satellite docking & servicing</td><td>Ottawa, ON</td></tr>
+    <tr><td>4pi Lab</td><td>Wildfire geolocation & detection</td><td>Calgary, AB</td></tr>
+    <tr><td>StarSpec Technologies</td><td>Satellite bus design & manufacturing</td><td>Toronto, ON</td></tr>
+    <tr><td>Tallysman Wireless</td><td>GNSS antennas & receivers</td><td>Ottawa, ON</td></tr>
+    <tr><td>C-COM Satellite Systems</td><td>Mobile satellite antenna systems</td><td>Ottawa, ON</td></tr>
+    <tr><td>Sinclair Interplanetary</td><td>Small satellite components</td><td>Toronto, ON</td></tr>
+    <tr><td>Spectrum Signal Processing</td><td>Signal processing hardware/software</td><td>Burnaby, BC</td></tr>
+  </tbody>
+</table>
+
+<script>
+  const input = document.getElementById("filterInput");
+  input.addEventListener("keyup", function() {
+    const filter = input.value.toLowerCase();
+    const rows = document.querySelectorAll("#companyTable tbody tr");
+    rows.forEach(row => {
+      const text = row.textContent.toLowerCase();
+      row.style.display = text.includes(filter) ? "" : "none";
+    });
+  });
+</script>
+
+</body>
+</html>
