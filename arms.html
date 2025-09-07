@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2025 Top 100 Canadian Defence Companies</title>
+  <title>Top Canadian Software Companies Using Palantir (2025)</title>
   <style>
     body {
       font-family: 'Segoe UI', Roboto, sans-serif;
-      background: #f4f7fa;
+      background: linear-gradient(to right, #f4f7fa, #e9eff5);
       margin: 0;
       padding: 2rem;
       color: #333;
@@ -20,12 +20,18 @@
       color: #2c3e50;
     }
 
-    p.description {
+    .search-box {
       text-align: center;
-      max-width: 700px;
-      margin: 0 auto 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    input[type="text"] {
+      padding: 0.5rem 1rem;
       font-size: 1rem;
-      color: #555;
+      width: 80%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
     }
 
     .table-container {
@@ -67,40 +73,46 @@
       th, td {
         padding: 0.5rem;
       }
+
+      input[type="text"] {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>2025 Top 100 Canadian Defence Companies</h1>
-  <p class="description">
-    Discover the top Canadian Defence Companies ranked annually by CDR based on their economic impact, innovation, research & development initiatives, contributions to national security, and excellence in supporting Canada’s military.
-  </p>
+  <h1>Top Canadian Software Companies Using Palantir (2025)</h1>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Filter by keyword..." onkeyup="filterTable()" />
+  </div>
 
   <div class="table-container">
-    <table>
+    <table id="companyTable">
       <thead>
         <tr>
-          <th>2025 Rank</th>
+          <th>Rank</th>
           <th>Company Name</th>
-          <th>Previous Rank</th>
+          <th>Industry Focus</th>
+          <th>Palantir Usage</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>1</td><td>CAE</td><td>6</td></tr>
-        <tr><td>2</td><td>General Dynamics Land Systems-Canada</td><td>3</td></tr>
-        <tr><td>3</td><td>RTX</td><td>2</td></tr>
-        <tr><td>4</td><td>Davie</td><td>1</td></tr>
-        <tr><td>5</td><td>Seaspan Shipyards</td><td>5</td></tr>
-        <tr><td>6</td><td>L3Harris Technologies Canada</td><td>8</td></tr>
-        <tr><td>7</td><td>General Dynamics Mission Systems-Canada</td><td>10</td></tr>
-        <tr><td>8</td><td>KF Aerospace</td><td>12</td></tr>
-        <tr><td>9</td><td>Lockheed Martin Canada</td><td>7</td></tr>
-        <tr><td>10</td><td>Irving Shipbuilding</td><td>4</td></tr>        
-        <tr><td>11</td><td>Bell Textron Canada</td><td>11</td></tr>
-        <tr><td>12</td><td>Rheinmetall Canada</td><td>14</td></tr>
-        <tr><td>13</td><td>IMP Aerospace & Defence</td><td>9</td></tr>
-        <tr><td>14</td><td>thyssenkrupp Marine Systems Canada</td><td>19</td></tr>
-        <tr><td>15</td><td>PAL Aerospace</td><td>15</td></tr>
+	  
+<tr><td>1</td><td>CAE</td><td>6</td></tr>
+<tr><td>2</td><td>General Dynamics Land Systems-Canada</td><td>3</td></tr>
+<tr><td>3</td><td>RTX</td><td>2</td></tr>
+<tr><td>4</td><td>Davie</td><td>1</td></tr>
+<tr><td>5</td><td>Seaspan Shipyards</td><td>5</td></tr>
+<tr><td>6</td><td>L3Harris Technologies Canada</td><td>8</td></tr>
+<tr><td>7</td><td>General Dynamics Mission Systems-Canada</td><td>10</td></tr>
+<tr><td>8</td><td>KF Aerospace</td><td>12</td></tr>
+<tr><td>9</td><td>Lockheed Martin Canada</td><td>7</td></tr>
+<tr><td>10</td><td>Irving Shipbuilding</td><td>4</td></tr>        
+<tr><td>11</td><td>Bell Textron Canada</td><td>11</td></tr>
+<tr><td>12</td><td>Rheinmetall Canada</td><td>14</td></tr>
+<tr><td>13</td><td>IMP Aerospace & Defence</td><td>9</td></tr>
+<tr><td>14</td><td>thyssenkrupp Marine Systems Canada</td><td>19</td></tr>
+<tr><td>15</td><td>PAL Aerospace</td><td>15</td></tr>
 <tr><td>16</td><td>Calian</td><td>21</td></tr>
 <tr><td>17</td><td>Rolls-Royce Canada</td><td>17</td></tr>
 <tr><td>18</td><td>MDA Space</td><td>13</td></tr>
@@ -146,7 +158,7 @@
 <tr><td>58</td><td>GE Aerospace</td><td>48</td></tr>
 <tr><td>59</td><td>NP Aerospace</td><td>60</td></tr>
 <tr><td>60</td><td>GeoSpectrum Technologies</td><td>66</td>
-  <tr><td>61</td><td>Modest Tree</td><td>59</td></tr>
+<tr><td>61</td><td>Modest Tree</td><td>59</td></tr>
 <tr><td>62</td><td>Kognitiv Spark</td><td>64</td></tr>
 <tr><td>63</td><td>Kraken Robotic Systems</td><td>62</td></tr>
 <tr><td>64</td><td>Gastops</td><td>65</td></tr>
@@ -176,7 +188,7 @@
 <tr><td>88</td><td>TerraSense Analytics</td><td>87</td></tr>
 <tr><td>89</td><td>Duke Smart Staffing Solutions</td><td>91</td></tr>
 <tr><td>90</td><td>Virtual Marine Technology</td><td>89</td></tr>
-        <tr><td>91</td><td>Dafocom</td><td>92</td></tr>
+<tr><td>91</td><td>Dafocom</td><td>92</td></tr>
 <tr><td>92</td><td>InnovMarine</td><td>N/A</td></tr>
 <tr><td>93</td><td>Simex Defence</td><td>88</td></tr>
 <tr><td>94</td><td>TerraNova Solutions Rewired</td><td>N/A</td></tr>
@@ -187,11 +199,29 @@
 <tr><td>99</td><td>CCX Technologies</td><td>N/A</td></tr>
 <tr><td>100</td><td>NyRad</td><td>N/A</td></tr>
 
-
-        <!-- Continue adding rows as needed -->
-        <!-- You can paste the rest of the list here following the same format -->
       </tbody>
     </table>
   </div>
+
+  <script>
+    function filterTable() {
+      const input = document.getElementById("searchInput");
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById("companyTable");
+      const rows = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName("td");
+        let match = false;
+        for (let j = 0; j < cells.length; j++) {
+          if (cells[j].textContent.toLowerCase().includes(filter)) {
+            match = true;
+            break;
+          }
+        }
+        rows[i].style.display = match ? "" : "none";
+      }
+    }
+  </script>
 </body>
 </html>
