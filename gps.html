@@ -36,6 +36,11 @@
     th {
       background-color: #34495e;
       color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+    th:hover {
+      background-color: #2c3e50;
     }
     tr:hover {
       background-color: #f1f1f1;
@@ -60,9 +65,9 @@
 <table id="companyTable">
   <thead>
     <tr>
-      <th>Company Name</th>
-      <th>Specialty</th>
-      <th>Location</th>
+      <th onclick="sortTable(0)">Company Name ▲▼</th>
+      <th onclick="sortTable(1)">Specialty ▲▼</th>
+      <th onclick="sortTable(2)">Location ▲▼</th>
     </tr>
   </thead>
   <tbody>
@@ -88,15 +93,34 @@
 </table>
 
 <script>
-  const input = document.getElementById("filterInput");
-  input.addEventListener("keyup", function() {
-    const filter = input.value.toLowerCase();
+  // Filter logic
+  document.getElementById("filterInput").addEventListener("keyup", function() {
+    const filter = this.value.toLowerCase();
     const rows = document.querySelectorAll("#companyTable tbody tr");
     rows.forEach(row => {
-      const text = row.textContent.toLowerCase();
-      row.style.display = text.includes(filter) ? "" : "none";
+      row.style.display = row.textContent.toLowerCase().includes(filter) ? "" : "none";
     });
   });
+
+  // Sort logic
+  const sortDirections = [true, true, true]; // ascending by default
+
+  function sortTable(colIndex) {
+    const table = document.getElementById("companyTable");
+    const tbody = table.tBodies[0];
+    const rows = Array.from(tbody.rows);
+
+    rows.sort((a, b) => {
+      let aText = a.cells[colIndex].textContent.trim().toLowerCase();
+      let bText = b.cells[colIndex].textContent.trim().toLowerCase();
+      return sortDirections[colIndex]
+        ? aText.localeCompare(bText)
+        : bText.localeCompare(aText);
+    });
+
+    sortDirections[colIndex] = !sortDirections[colIndex];
+    rows.forEach(row => tbody.appendChild(row));
+  }
 </script>
 
 </body>
